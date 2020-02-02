@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreApi.Database;
 using CoreApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,6 +19,7 @@ namespace CoreApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            InMemoryDatabase.Initialize();
         }
 
         public IConfiguration Configuration { get; }

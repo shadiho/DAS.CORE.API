@@ -6,7 +6,7 @@ using CoreApiModels;
 
 namespace CoreApi.Database
 {
-    public class DoctorsTable : LinkedList<DoctorModel>
+    public class DoctorsTable : List<DoctorModel>
     {
     }
 }

@@ -8,7 +8,7 @@ namespace CoreApi.Services
 {
     public interface IAppointmentStorageService
     {
-        Task<bool> Book(AppointmentModel model);
+        Task<string> Book(AppointmentModel model);
         Task<bool> Cancel(AppointmentModel model);
 
     }

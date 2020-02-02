@@ -6,22 +6,26 @@ using System.Threading.Tasks;
 
 namespace CoreApi.Database
 {
-    public class InMemoryDatabase
+    public static class InMemoryDatabase
     {
         public static AppointmentsTable Appointments { get; set; }
         public static DoctorsTable Doctors { get; set; }
 
-        public static PateintsTable Patients { get; set; }
+        public static PatientsTable Patients { get; set; }
 
         public static void Initialize()
         {
-            Patients.AddLast(new PatientModel() { PatientId = "19860813-XXXX", PatientName = "Henrik Karlsson" });
-            Patients.AddLast(new PatientModel() { PatientId = "19750612-XXXX", PatientName = "Erik Henriksson" });
-            Patients.AddLast(new PatientModel() { PatientId = "19600519-XXXX", PatientName = "Cecilia Eliasson" });
+            Appointments = new AppointmentsTable();
+            Doctors = new DoctorsTable();
+            Patients = new PatientsTable();
 
-            Doctors.AddLast(new DoctorModel() { DoctorId = "201012-1425", DoctorName = "Mikael Seström" });
-            Doctors.AddLast(new DoctorModel() { DoctorId = "200911-1758", DoctorName = "Carina Axel" });
-            Doctors.AddLast(new DoctorModel() { DoctorId = "199005-1875", DoctorName = "Martin Eriksson" });
+            Patients.Add(new PatientModel() { PatientId = "19860813-XXXX", PatientName = "Henrik Karlsson" });
+            Patients.Add(new PatientModel() { PatientId = "19750612-XXXX", PatientName = "Erik Henriksson" });
+            Patients.Add(new PatientModel() { PatientId = "19600519-XXXX", PatientName = "Cecilia Eliasson" });
+
+            Doctors.Add(new DoctorModel() { DoctorId = "201012-1425", DoctorName = "Mikael Seström" });
+            Doctors.Add(new DoctorModel() { DoctorId = "200911-1758", DoctorName = "Carina Axel" });
+            Doctors.Add(new DoctorModel() { DoctorId = "199005-1875", DoctorName = "Martin Eriksson" });
         }
 
     }

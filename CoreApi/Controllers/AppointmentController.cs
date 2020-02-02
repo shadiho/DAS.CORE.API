@@ -19,21 +19,33 @@ namespace CoreApi.Controllers
             _appointmentStorageService = appointmentStorageService;
         }
 
+
+        [HttpGet]
+        [Route("GetAppointment")]
+        [ProducesResponseType(200)]
+        public async Task<AppointmentModel> GetAppointment()
+        {
+
+            return new AppointmentModel() { DoctorId = "1234", PatientId = "234455", FromDate = DateTime.Now, ToDate = DateTime.Now };
+
+        }
+
         [HttpPost]
         [Route("Book")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(200, Type = typeof(AppointmentModel))]
+        [ProducesResponseType(400)]
         public async Task<IActionResult> Book(AppointmentModel model)
         {
             try
             {
-                bool ok = await _appointmentStorageService.Book(model);
-
+                string appointmentId = await _appointmentStorageService.Book(model);
+                model.AppointmentID = appointmentId;
             }
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
-            return new OkResult();
+            return StatusCode(201, model);
         }
 
         [HttpDelete]

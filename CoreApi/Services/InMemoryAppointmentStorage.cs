@@ -9,17 +9,19 @@ namespace CoreApi.Services
 {
     public class InMemoryAppointmentStorage : IAppointmentStorageService
     {
-        public async Task<bool> Book(AppointmentModel model)
+        public async Task<string> Book(AppointmentModel model)
         {
-            InMemoryDatabase.Appointments.AddLast(model);
-            return true;
+            model.AppointmentID = Guid.NewGuid().ToString();
+            InMemoryDatabase.Appointments.Add(model);
+            return model.AppointmentID;
         }
 
         public async Task<bool> Cancel(AppointmentModel model)
         {
-            if (!InMemoryDatabase.Appointments.Contains(model))
+            AppointmentModel itemToBeRemoved = InMemoryDatabase.Appointments.Single(m => m.AppointmentID == model.AppointmentID);
+            if (itemToBeRemoved  == null)
                 return false;
-            InMemoryDatabase.Appointments.Remove(model);
+            InMemoryDatabase.Appointments.Remove(itemToBeRemoved);
             return true;
         }
 

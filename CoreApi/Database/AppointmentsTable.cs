@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoreApi.Database
 {
-    public class AppointmentsTable:LinkedList<AppointmentModel>
+    public class AppointmentsTable:List<AppointmentModel>
     {
     }
 }

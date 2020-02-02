@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoreApi.Database
 {
-    public class PateintsTable:LinkedList<PatientModel>
+    public class PatientsTable:List<PatientModel>
     {
     }
 }

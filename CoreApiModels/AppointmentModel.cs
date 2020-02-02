@@ -6,6 +6,7 @@ namespace CoreApiModels
 {
     public class AppointmentModel
     {
+        public string AppointmentID { get; set; }
         public string PatientId { get; set; }
         public string DoctorId { get; set; }
 
