@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoreApi.Database;
+using DASInMemoryDatabase;
 using CoreApi.Services;
+using CoreApi.Services.Queue;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+
 
 namespace CoreApi
 {
@@ -28,6 +30,7 @@ namespace CoreApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IAppointmentStorageService, InMemoryAppointmentStorage>();
+            services.AddTransient<IQueueClientService, SQSClient>();
             services.AddControllers();
         }
 

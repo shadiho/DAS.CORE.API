@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreApiModels;
 
-namespace CoreApi.Database
+namespace DASInMemoryDatabase
 {
     public class DoctorsTable : List<DoctorModel>
     {

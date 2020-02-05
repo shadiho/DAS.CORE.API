@@ -1,4 +1,4 @@
-﻿using CoreApi.Database;
+﻿using DASInMemoryDatabase;
 using CoreApiModels;
 using System;
 using System.Collections.Generic;
@@ -12,17 +12,18 @@ namespace CoreApi.Services
         public async Task<string> Book(AppointmentModel model)
         {
             model.AppointmentID = Guid.NewGuid().ToString();
+            model.CreationDateTime = DateTime.Now;
             InMemoryDatabase.Appointments.Add(model);
-            return model.AppointmentID;
+            return await Task.FromResult(model.AppointmentID);
         }
 
         public async Task<bool> Cancel(AppointmentModel model)
         {
-            AppointmentModel itemToBeRemoved = InMemoryDatabase.Appointments.Single(m => m.AppointmentID == model.AppointmentID);
+            AppointmentModel itemToBeRemoved = InMemoryDatabase.Appointments.SingleOrDefault(m => m.AppointmentID == model.AppointmentID);
             if (itemToBeRemoved  == null)
                 return false;
             InMemoryDatabase.Appointments.Remove(itemToBeRemoved);
-            return true;
+            return await Task.FromResult(true);
         }
 
     }

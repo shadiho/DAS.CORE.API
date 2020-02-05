@@ -1,0 +1,11 @@
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\obj\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.AssemblyInfoInputs.cache
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\obj\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.AssemblyInfo.cs
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\obj\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.csprojAssemblyReference.cache
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\bin\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.deps.json
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\bin\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.dll
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\bin\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.pdb
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\bin\Debug\netcoreapp3.1\CoreApiModels.dll
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\bin\Debug\netcoreapp3.1\CoreApiModels.pdb
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\obj\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.csproj.CopyComplete
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\obj\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.dll
+D:\Alten\Source\DAS.CORE.API\CoreApiInMemoryDatabase\obj\Debug\netcoreapp3.1\CoreApiInMemoryDatabase.pdb

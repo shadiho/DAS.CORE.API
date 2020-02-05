@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreApi.Services;
+using CoreApi.Services.Queue;
 using CoreApiModels;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace CoreApi.Controllers
 {
@@ -13,10 +15,11 @@ namespace CoreApi.Controllers
     public class AppointmentController : ControllerBase
     {
         private readonly IAppointmentStorageService _appointmentStorageService;
-
-        public AppointmentController(IAppointmentStorageService appointmentStorageService)
+        private readonly IQueueClientService _queueClientService;
+        public AppointmentController(IAppointmentStorageService appointmentStorageService,IQueueClientService queueClientService)
         {
             _appointmentStorageService = appointmentStorageService;
+            _queueClientService = queueClientService;
         }
 
 
@@ -45,6 +48,7 @@ namespace CoreApi.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
+            _queueClientService.SendMessage(model,"bookAppointment");
             return StatusCode(201, model);
         }
 
@@ -66,6 +70,7 @@ namespace CoreApi.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
+            _queueClientService.SendMessage(model, "cancelAppointment");
             return new OkResult();
         }
     }

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CoreApiInMemoryDatabase/1.0.0": {
+        "dependencies": {
+          "CoreApiModels": "1.0.0"
+        },
+        "runtime": {
+          "CoreApiInMemoryDatabase.dll": {}
+        }
+      },
+      "CoreApiModels/1.0.0": {
+        "runtime": {
+          "CoreApiModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CoreApiInMemoryDatabase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreApiModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

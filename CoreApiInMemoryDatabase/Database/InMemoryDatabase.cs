@@ -4,20 +4,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoreApi.Database
+namespace DASInMemoryDatabase
 {
     public static class InMemoryDatabase
     {
         public static AppointmentsTable Appointments { get; set; }
         public static DoctorsTable Doctors { get; set; }
-
         public static PatientsTable Patients { get; set; }
+
+        public static AppointmentConflictsTable AppointmentsConflicts { get; set; }
+
+        public static AppointmentsOpLogTable AppointmentsOpLog { get; set; }
 
         public static void Initialize()
         {
             Appointments = new AppointmentsTable();
             Doctors = new DoctorsTable();
             Patients = new PatientsTable();
+            AppointmentsConflicts = new AppointmentConflictsTable();
+            AppointmentsOpLog = new AppointmentsOpLogTable();
 
             Patients.Add(new PatientModel() { PatientId = "19860813-XXXX", PatientName = "Henrik Karlsson" });
             Patients.Add(new PatientModel() { PatientId = "19750612-XXXX", PatientName = "Erik Henriksson" });

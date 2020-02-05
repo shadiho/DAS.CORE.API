@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CoreApi.Database
+namespace DASInMemoryDatabase
 {
-    public class AppointmentsTable:List<AppointmentModel>
+    public class PatientsTable:List<PatientModel>
     {
     }
 }
