@@ -54,7 +54,7 @@ namespace CoreApi.Controllers
             return StatusCode(201, model);
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("Cancel")]
         [ProducesResponseType(404)]
         [ProducesResponseType(200)]

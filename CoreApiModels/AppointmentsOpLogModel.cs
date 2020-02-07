@@ -21,6 +21,10 @@ namespace CoreApiModels
 
         public DateTime LogDateTime { get; set; }
 
+        public string DoctorID { get; set; }
+
+        public string PatientID { get; set; }
+
 
     }
 }
