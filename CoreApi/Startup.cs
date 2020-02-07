@@ -31,6 +31,10 @@ namespace CoreApi
         {
             services.AddTransient<IAppointmentStorageService, InMemoryAppointmentStorage>();
             services.AddTransient<IQueueClientService, SQSClient>();
+
+            services.AddCors(options => {
+                options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
             services.AddControllers();
         }
 
@@ -43,7 +47,7 @@ namespace CoreApi
             }
 
             app.UseRouting();
-
+            app.UseCors("AllowAll");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

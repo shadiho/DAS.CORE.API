@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using CoreApi.Services;
 using CoreApi.Services.Queue;
 using CoreApiModels;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace CoreApi.Controllers
 {
+    [EnableCors("AllowAll")]
     [ApiController]
     [Route("api/v1/appointments")]
     public class AppointmentController : ControllerBase
