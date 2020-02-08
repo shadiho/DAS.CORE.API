@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CoreApi.Services;
 using CoreApi.Services.Queue;
 using CoreApiModels;
+using DASInMemoryDatabase;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -74,6 +75,16 @@ namespace CoreApi.Controllers
             }
             _queueClientService.SendMessage(model, "cancelAppointment");
             return new OkResult();
+        }
+
+        [HttpPost]
+        [Route("ResetApp")]
+        public async Task<IActionResult> ResetApp()
+        {
+            InMemoryDatabase.Appointments.Clear();
+            InMemoryDatabase.AppointmentsConflicts.Clear();
+            InMemoryDatabase.AppointmentsOpLog.Clear();
+            return await Task.FromResult(new OkResult());
         }
     }
 }
