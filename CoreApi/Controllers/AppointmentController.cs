@@ -26,15 +26,7 @@ namespace CoreApi.Controllers
         }
 
 
-        [HttpGet]
-        [Route("GetAppointment")]
-        [ProducesResponseType(200)]
-        public async Task<AppointmentModel> GetAppointment()
-        {
-
-            return new AppointmentModel() { DoctorId = "1234", PatientId = "234455", FromDate = DateTime.Now, ToDate = DateTime.Now };
-
-        }
+       
 
         [HttpPost]
         [Route("Book")]
