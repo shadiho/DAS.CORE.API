@@ -36,6 +36,7 @@ namespace CoreApi
                 options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
             services.AddControllers();
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +46,7 @@ namespace CoreApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseHealthChecks("/health");
 
             app.UseRouting();
             app.UseCors("AllowAll");

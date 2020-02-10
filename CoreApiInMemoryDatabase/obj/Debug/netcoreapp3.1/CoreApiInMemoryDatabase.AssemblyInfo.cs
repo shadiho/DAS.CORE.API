@@ -11,11 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CoreApiInMemoryDatabase")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("none")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("CoreApiInMemoryDatabase")]
+[assembly: System.Reflection.AssemblyProductAttribute("DAS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreApiInMemoryDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

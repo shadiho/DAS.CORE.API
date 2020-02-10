@@ -1,0 +1,28 @@
+
+{
+    "region" : "us-east-2",
+    "profile" : "default",
+    "configuration" : "Release",
+    "tag"           : "coreapi:latest",
+    "docker-build-working-dir" : "",
+    "cluster"                  : "DASCoreAPI1",
+    "launch-type"              : "FARGATE",
+    "launch-subnets"           : "subnet-03cefad3a4141edf2,subnet-006953a2250d0a10c",
+    "launch-security-groups"   : "sg-07a37e327b2aca7b8",
+    "assign-public-ip"         : true,
+    "task-definition-name"     : "DASCoreAPI",
+    "task-cpu"                 : "256",
+    "task-memory"              : "512",
+    "task-execution-role"      : "ecsTaskExecutionRole",
+    "container-name"           : "DASCoreAPI",
+    "container-port-mapping"   : "80:80",
+    "container-environment-variables" : "\"ASPNETCORE_ENVIRONMENT\"=\"Production\"",
+    "skip-image-push"                 : false,
+    "cluster-service"                 : "DASCoreApi1",
+    "desired-count"                   : 1,
+    "deployment-minimum-healthy-percent" : 50,
+    "deployment-maximum-percent"         : 200,
+    "vstoolkit-deployment-mode"          : "DeployService",
+    "elb-target-group"                   : "arn:aws:elasticloadbalancing:us-east-2:950813823347:targetgroup/DASGroup1/91916abecc53872e",
+    "elb-container-port"                 : 80
+}

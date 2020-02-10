@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Shadi Hudaifa</Authors>
+    <Company>none</Company>
+    <Product>DAS</Product>
+    <RepositoryUrl>https://github.com/shadiho/DAS.CORE.API.git</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
